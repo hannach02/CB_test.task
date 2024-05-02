@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet" integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M=" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.modern.css" rel="stylesheet" integrity="sha256-DD6elX+jPmbFYPsGvzodUv2+9FHkxHlVtQi0/RJVULs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Бібліотека</h1>
+        <div class="nav">
+            <ul class="nav nav-underline border-bottom">
+                <li class="nav-item">
+                    <a class="nav-link active author-btn" aria-current="true" href="#">Автори</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link genre-btn" href="#">Жанри</a>
+                </li>
+            </ul>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control search-input" placeholder="Пошук за назвою книги">
+                <button class="btn btn-outline-secondary search-btn" type="button">Пошук</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <button type="button" class="btn btn-outline-primary add-btn">Додати автора</button>
+            <div class="content-table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Прізвище та ім'я</th>
+                            <th scope="col">Кількість книг</th>
+                            <th scope="col">Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="author-info hidden">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="1-fname" class="form-label">Ім'я:</label>
+                        <input type="text" class="form-control name" id="1-fname" placeholder="Ім'я" required>
+                        <div class="invalid-feedback " id="1-fname-invalid-feedback">
+                            Будь ласка, введіть Ім'я.
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lname" class="form-label">Прізвище:</label>
+                        <input type="text" class="form-control second-name" id="lname" placeholder="Прізвище" required>
+                        <div class="invalid-feedback hidden" id="lname-invalid-feedback">
+                            Будь ласка, введіть Прізвище.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label  class="form-label">По батькові:</label>
+                        <input type="text" class="form-control father-name"  placeholder="По батькові" >
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Дата народження</label>
+                        <input type="date" class="form-control b-day" required>
+                        <div class="invalid-feedback hidden" id="b-day-invalid-feedback">
+                            Будь ласка, оберіть дату.
+                        </div>
+                    </div>
+                    <div class="book-list">
+                        <h4>Книги</h4>
+                        <button type="button" class="btn btn-primary ms-auto edit-btn">Редагувати</button>
+                    </div>
+                    <div class="row g-3 needs-validation edit-book hidden" novalidate>
+                        <div class="col-12">
+                            <label class="form-label">Назва:</label>
+                            <input type="text" class="form-control title" required>
+                            <div class="invalid-feedback hidden" id="title-invalid-feedback">
+                                Будь ласка, введіть назву.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Кількість сторінок:</label>
+                            <input type="number" class="form-control page-count" required>
+                            <div class="invalid-feedback hidden" id="page-count-invalid-feedback">
+                               Будь ласка, введіть кількість сторінок.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Жанр:</label>
+                            <select class="form-select genre" required>
+                                <option>Фантастика</option>
+                                <option>Детектив</option>
+                                <option>Пригоди</option>
+                                <option>Проза</option>
+                                <option>Поєзія</option>
+                                <option>Біографія</option>
+                                <option>Драма</option>
+                                <option>Дитяча література</option>
+                                <option>Класика</option>
+                            </select>
+                            <div class="invalid-feedback hidden" id="genre-invalid-feedback">
+                                Будь ласка, оберіть жанр.
+                            </div>
+                        </div>
+                        <button class="btn btn-primary ms-auto add-book-btn" >Додати книгу</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary ms-auto save-author-btn" >Зберегти</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

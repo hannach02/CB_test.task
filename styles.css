@@ -1,0 +1,12 @@
+*{
+    margin: 5px;
+}
+.hidden{
+    display: none;
+}
+button{
+    margin: 5px;
+}
+.author-info{
+   max-width: 50%;
+}
